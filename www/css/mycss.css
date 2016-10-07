@@ -1,0 +1,36 @@
+img{
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    background-size: cover;
+}
+.title{
+    color: #ffffff;
+}
+.button-assertive{
+    background-color: #be1d2c;
+}
+.my_red{
+    background-color: #be1d2c;
+}
+
+/*
+
+input[type='password'],input[type='text'],input[type='number'],textarea.myTextArea{
+    margin-right: 15px;
+    background-color:transparent;
+    color:inherit;
+    */
+/*padding:2px 5px;*//*
+
+    */
+/*padding: 10px;*//*
+
+    border:1px solid rgba(44, 38, 44, 0.5);
+    -webkit-border-radius: 8px;
+}*/
+
+
+.item-input-wrapper{
+    margin-top: 10px; padding: 5px;
+}

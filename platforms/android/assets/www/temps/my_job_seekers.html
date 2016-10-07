@@ -1,0 +1,96 @@
+<ion-nav-view>
+    <ion-view title="My title">
+        <div class="bar bar-header my_red">
+            <h1 class="title">Red Ant</h1>
+        </div>
+        <i class=""></i>
+
+
+
+        <ion-tabs>
+
+            <ion-tab title="Fully Paid" href="#/my_job_seeker">
+                <!-- Tab 1 for the fully paid registered service providers -->
+                <h4 class="text-center">Registered Job Seekers</h4>
+                <div class="card">
+                    <div class="list">
+                        <ion-item ng-show="jobSeekers.length" ng-repeat="item in jobSeekers">
+                            <a class="item" href="#/Details/{{item.id}}">
+                                <strong style="text-transform: capitalize"> {{item.name}}</strong><br/>
+                                <p><i class="icon ion-person-stalker" style="font-size: small"></i>&nbsp; &nbsp;  {{item.category}}</p>
+                                <p><i class="icon ion-android-phone-landscape"  style="font-size: small"></i>&nbsp; &nbsp; {{item.phone_number}}</p>
+                                <p><i class="icon ion-ios-location" style="font-size: small"></i> &nbsp; &nbsp; {{item.location}}</p>
+                                <p ng-show="item.status == 'fully paid'" style="color: green">
+                                    <i class="icon ion-checkmark" style="font-size: 20px"></i>&nbsp; &nbsp;
+                                    Paid
+                                </p>
+                                <p ng-hide="item.status == 'fully paid'" style="color: indianred">
+                                    <i class="icon ion-alert" style="font-size: 20px"></i>&nbsp; &nbsp; not paid
+                                </p>
+
+                            </a>
+                        </ion-item>
+
+                        <ion-item ng-hide="jobSeekers.length"><strong>You have not registered job seekers.</strong></ion-item>
+                    </div>
+                </div>
+
+            </ion-tab>
+
+            <ion-tab title="Partially Unpaid" href="#/partiallyPaidJobSeekers">
+
+                <!-- Tab 2 for partially paid registered service providers -->
+                <h4 class="text-center">Registered Job Seekers</h4>
+                <div class="card">
+                    <div class="list">
+                        <ion-item ng-show="jobSeekers.length" ng-repeat="item in jobSeekers">
+                            <a class="item" href="#/Details/{{item.id}}">
+                                <strong style="text-transform: capitalize"> {{item.name}}</strong><br/>
+                                <p><i class="icon ion-person-stalker" style="font-size: small"></i>&nbsp; &nbsp;  {{item.category}}</p>
+                                <p><i class="icon ion-android-phone-landscape"  style="font-size: small"></i>&nbsp; &nbsp; {{item.phone_number}}</p>
+                                <p><i class="icon ion-ios-location" style="font-size: small"></i> &nbsp; &nbsp; {{item.location}}</p>
+                                <p ng-show="item.status == 'fully paid'" style="color: green">
+                                    <i class="icon ion-checkmark" style="font-size: 20px"></i>&nbsp; &nbsp;
+                                    Paid
+                                </p>
+                                <p ng-hide="item.status == 'fully paid'" style="color: indianred">
+                                    <i class="icon ion-alert" style="font-size: 20px"></i>&nbsp; &nbsp; not paid
+                                </p>
+
+                            </a>
+                        </ion-item>
+
+                        <ion-item ng-hide="jobSeekers.length"><strong>You have not registered job seekers.</strong></ion-item>
+                    </div>
+                </div>
+            </ion-tab>
+        </ion-tabs>
+
+
+        <!--<ion-content class="has-header">
+            <h4 class="text-center">Registered Job Seekers</h4>
+            <div class="card">
+               <div class="list">
+                   <ion-item ng-show="jobSeekers.length" ng-repeat="item in jobSeekers">
+                   <a class="item" href="#/Details/{{item.id}}">
+                       <strong style="text-transform: capitalize"> {{item.name}}</strong><br/>
+                       <p><i class="icon ion-person-stalker" style="font-size: small"></i>&nbsp; &nbsp;  {{item.category}}</p>
+                       <p><i class="icon ion-android-phone-landscape"  style="font-size: small"></i>&nbsp; &nbsp; {{item.phone_number}}</p>
+                       <p><i class="icon ion-ios-location" style="font-size: small"></i> &nbsp; &nbsp; {{item.location}}</p>
+                       <p ng-show="item.status == 'fully paid'" style="color: green">
+                           <i class="icon ion-checkmark" style="font-size: 20px"></i>&nbsp; &nbsp;
+                           Paid
+                       </p>
+                       <p ng-hide="item.status == 'fully paid'" style="color: indianred">
+                           <i class="icon ion-alert" style="font-size: 20px"></i>&nbsp; &nbsp; not paid
+                       </p>
+
+                   </a>
+                   </ion-item>
+
+                   <ion-item ng-hide="jobSeekers.length"><strong>You have not registered job seekers.</strong></ion-item>
+               </div>
+            </div>
+        </ion-content>-->
+    </ion-view>
+</ion-nav-view>

@@ -1,0 +1,152 @@
+<ion-modal-view>
+
+
+<!--<ion-header-bar>-->
+    <ion-nav-bar class="bar my_red">
+    <ion-nav-buttons side="left">
+        <h2 style="color: #ffffff">Edit Service Provider</h2>
+       <!-- <button class="button button-clear pull-right" type="button" ng-click="closeLogin()"
+                style="color: #ffffff; text-align: right; font-size: larger">
+            &times; Close</button>-->
+    </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-clear icon ion-close" type="button" ng-click="closeEditor()"
+                    style="color: #ffffff; text-align: right; font-size: larger">
+                 </button>
+        </ion-nav-buttons>
+</ion-nav-bar>
+<!--</ion-header-bar>-->
+    <!--
+    <ion-nav-button>
+        <button class="button button-outline">cjndjnd</button>
+    </ion-nav-button>
+  <ion-header-bar class="bar my_red" title="Login To Proceed">
+      <p>
+      <h2 style="padding-left: 10%; color: #ffffff; text-align: center">Login To Proceed</h2>
+      </p>
+  </ion-header-bar>-->
+  <ion-content class=" has-header has-subheader">
+      <form ng-submit="UpdateServiceProvider(formData)">
+
+          <div class="item-input-inset item item-input item-stacked-label">
+              <span class="input-label">First Name:</span>
+              <label class="item-input-wrapper">
+                  <input type="text" name="username" ng-model="formData.firstName"
+                         placeholder="First Name">
+              </label>
+          </div>
+
+          <input type="hidden" ng-model="formData.agent_id">
+
+          <div class="item-input-inset item item-input item-stacked-label">
+              <span class="input-label">Last Name:</span>
+              <label class="item-input-wrapper">
+                  <input type="text" name="username" ng-model="formData.lastName"
+                         placeholder="Last Name">
+              </label>
+
+          </div>
+
+          <div class="item-input-inset item item-input item-stacked-label">
+              <span class="input-label">Phone Number:</span>
+              <label class="item-input-wrapper">
+                  <input type="text" name="phoneNumber" ng-model="formData.phone_number"
+                         placeholder="Phone Number">
+              </label>
+
+          </div>
+
+          <!--<label class="item item-input item-select">
+              <div class="input-label">
+                  Service:
+              </div>
+              <select ng-model="formData.category_id">
+                  <option ng-repeat="item in cats" value={{item.id}}>{{item.name}}</option>
+              </select>
+          </label>
+
+          <label class="item item-input item-select">
+              <div class="input-label">
+                  County:
+              </div>
+              <select ng-model="formData.location">
+                  <option ng-repeat="item in locations" value={{item}}>{{item}}</option>
+              </select>
+          </label>-->
+
+
+          <div class="item-input-inset item item-input item-stacked-label">
+              <span class="input-label">Current Residence</span>
+              <label class="item-input-wrapper">
+                  <input type="text" name="phoneNumber" ng-model="formData.locationDesc"
+                         placeholder="Where do you live.">
+              </label>
+
+          </div>
+
+
+          <div class="item-input-inset item item-input item-stacked-label">
+              <span class="input-label">ID Number:</span>
+              <label class="item-input-wrapper">
+                  <input type="text" name="phoneNumber" ng-model="formData.id_number"
+                         placeholder="National ID NO.">
+              </label>
+          </div>
+
+
+          <label class="item item-input">
+              <button id="frontIdBtn" class="button button-positive button-small button-outline"
+                      ng-click="photoFrontID()" type="button">Attach ID front picture</button>
+                          <span >
+                              <img id="frontId" width="75px" height="50px"alt=""/>
+                          </span>
+          </label>
+          <label class="item item-input">
+              <button id="backIdBtn" class="button button-positive button-small button-outline"
+                      ng-click="photoBackID()" type="button">Attach ID back picture</button>
+                          <span>
+                              <img id="backId" width="75px" height="50px" alt=""/>
+                          </span>
+          </label>
+          <label class="item item-input">
+              <button id="profileBtn" class="button button-positive button-small button-outline"
+                      ng-click="photoProfile()" type="button">Attach Profile Picture &nbsp;</button>
+                          <span>
+                              <img id="profile" width="75px" height="50px" alt=""/>
+                          </span>
+          </label>
+          <!-- <button ng-show="idfront==null" class="button button-positive button-small" ng-click="photoBackID()" type="button">Attach ID back</button>
+           <button ng-show="idfront==null" class="button button-positive button-small" ng-click="photoProfile()" type="button">Profile pic</button>
+-->
+
+
+          <div class="item-input-inset item item-input item-stacked-label">
+              <span class="input-label">Description:</span>
+              <label class="item-input-wrapper">
+                            <textarea class="myTextArea" placeholder="Work description"
+                                      ng-model="formData.work_description" rows="3"></textarea>
+              </label>
+
+          </div>
+
+
+          <!--Cash payment-->
+          <!--<ion-checkbox ng-model="formData.payNowd" ng-change="payChange('later')">Pay Later</ion-checkbox>
+          <ion-checkbox ng-model="formData.payNow" ng-change="payChange('cash')">Pay now [cash]</ion-checkbox>
+
+          <label class="item-input-inset item item-input item-stacked-label" ng-show="formData.payNow==true">
+              <span>Amount in Kshs.</span>
+              <label class="item-input-wrapper">
+                  <input type="number" name="phoneNumber" ng-model="formData.pay"
+                         placeholder="Enter amount paid">
+              </label>
+              &lt;!&ndash;<input type="number" name="username" placeholder="Enter amount paid" ng-model="formData.pay">&ndash;&gt;
+          </label>
+-->
+          <label class="">
+              <button type="submit" class="button button-assertive button-block button-outline">Update</button>
+          </label>
+      </form>
+
+  </ion-content>
+</ion-modal-view>

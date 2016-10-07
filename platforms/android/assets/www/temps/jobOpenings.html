@@ -1,0 +1,27 @@
+<ion-nav-view>
+    <ion-view title="My title">
+        <div class="bar bar-header my_red">
+            <h1 class="title">Red Ant</h1>
+        </div>
+        <i class=""></i>
+        <ion-content class="has-header">
+            <h4 class="text-center">Job Openings</h4>
+            <div class="card">
+               <div class="list">
+                   <ion-item ng-repeat="item in jobs" ng-show="jobs.length">
+                   <div class="item">
+                       <strong style="text-transform: capitalize"> {{item.name}}</strong><br/>
+                       <p style="; white-space: normal"><i class="icon ion-document-text" style="font-size: small"></i>&nbsp; &nbsp;  {{item.description}}</p>
+                       <p><i class="icon ion-android-phone-portrait"  style="font-size: small"></i>&nbsp; &nbsp; {{item.phonenumber}}</p>
+                       <p><i class="icon ion-ios-location" style="font-size: small"></i> &nbsp; &nbsp; {{item.location}}</p>
+                       <a class="button button-outline button-balanced button-small icon ion-android-call"
+                          href="tel:{{item.phonenumber}}"> &nbsp;{{item.phonenumber}}</a>
+                   </div>
+                       </ion-item>
+
+                   <ion-item ng-hide="jobs.length"><strong>No job seeker has made payment.</strong></ion-item>
+               </div>
+            </div>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

@@ -1,0 +1,27 @@
+<ion-nav-view>
+    <ion-view title="My title">
+        <div class="bar bar-header my_red">
+            <h1 class="title">Red Ant</h1>
+        </div>
+        <i class=""></i>
+        <ion-content class="has-header">
+            <h4 class="text-center" style="text-transform: capitalize">{{serviceProvider.name}}</h4>
+            <div class="card" style="padding: 4%">
+                   <div class="list">
+                       <div class="item item-thumbnail-right" href="#">
+                           <img src="{{url}}/photos/{{serviceProvider.photo_profile_url}}">
+                           <strong style="text-transform: capitalize">{{serviceProvider.name}}</strong><br/>
+                           <p>{{serviceProvider.category}}</p>
+                           <p>{{serviceProvider.location}}</p>
+                           <p>{{serviceProvider.phone_number}}</p>
+                           <p>{{serviceProvider.id_number}}</p>
+                           <p style="white-space: normal;">{{serviceProvider.work_description}}</p>
+                       </div>
+                   </div>
+                   <!--<div class="list" ng-hide="serviceProvider.length">
+                       The Profile for the service provider not updated.
+                   </div>-->
+            </div>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

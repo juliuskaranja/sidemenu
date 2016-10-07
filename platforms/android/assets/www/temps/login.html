@@ -1,0 +1,43 @@
+        <ion-nav-view>
+            <ion-view title="My title">
+                <div class="bar bar-header my_red">
+                    <h1 class="title" style="color: #ffffff">Red Ant Directory</h1>
+                </div>
+                <i class=""></i>
+                <ion-content class="has-header" style="">
+                    <h2 class="title text-center" style="color: #ffffff">LOGIN TO PROCEED</h2>
+
+                    <div style="padding-top: 10%; padding-left: 15%; padding-right: 15%;"  class="text-center">
+                        <img src="img/log_redAnt.png" alt="REDANT INTERNATIONAL" width="60%" height="45%" />
+                    </div>
+                    <form ng-submit="login(form)">
+                        <div style="padding-top: 8%; margin: 5%;">
+                            <div class="list">
+                                <div class="item-input-inset item item-input item-stacked-label">
+                                    <span class="input-label">Username</span>
+                                    <label class="item-input-wrapper">
+                                        <input type="text" name="username" ng-model="form.username"
+                                               placeholder="Enter E-mail Address">
+                                    </label>
+                                </div>
+                                <div class="item-input-inset item item-input item-stacked-label">
+                                    <span class="input-label">Password</span>
+                                    <label class="item-input-wrapper">
+                                        <input type="password" name="password" ng-model="form.password"
+                                               placeholder="Enter Password">
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 5%;">
+                            <button class="button button-block button-outline button-assertive">
+                                <i class="ion ion-log-in"></i>
+                                Login</button>
+                        </div>
+                    </form>
+
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>

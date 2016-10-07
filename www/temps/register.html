@@ -1,0 +1,160 @@
+<ion-nav-view>
+    <ion-view title="My title">
+        <div class="bar bar-header my_red">
+            <h1 class="title">Red Ant</h1>
+        </div>
+        <i class=""></i>
+        <ion-content class="has-header">
+            <h2 class="text-center" ng-hide="paymentDetails==1">Register Service Provider</h2>
+            <div class="card" ng-hide="paymentDetails==1">
+
+                <form ng-submit="registerCustomer(formData)">
+
+                    <div class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">First Name:</span>
+                        <label class="item-input-wrapper">
+                            <input type="text" name="username" ng-model="formData.firstName"
+                                   placeholder="First Name">
+                        </label>
+                    </div>
+
+                    <input type="hidden" ng-model="formData.agent_id">
+
+                    <div class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">Last Name:</span>
+                        <label class="item-input-wrapper">
+                            <input type="text" name="username" ng-model="formData.lastName"
+                                   placeholder="Last Name">
+                        </label>
+
+                    </div>
+
+                    <div class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">Phone Number:</span>
+                        <label class="item-input-wrapper">
+                            <input type="number" name="phoneNumber" ng-model="formData.phone_number"
+                                   placeholder="Phone Number">
+                        </label>
+
+                    </div>
+
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Service:
+                        </div>
+                        <select ng-model="formData.category_id">
+                            <option ng-repeat="item in cats" value={{item.id}}>{{item.name}}</option>
+                        </select>
+                    </label>
+
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            County:
+                        </div>
+                        <select ng-model="formData.location">
+                            <option ng-repeat="item in locations" value={{item}}>{{item}}</option>
+                        </select>
+                    </label>
+
+
+                    <div class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">Current Residence</span>
+                        <label class="item-input-wrapper">
+                            <input type="text" name="phoneNumber" ng-model="formData.locationDesc"
+                                   placeholder="Where do you live.">
+                        </label>
+
+                    </div>
+
+
+                    <div class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">ID Number:</span>
+                        <label class="item-input-wrapper">
+                            <input type="number" name="phoneNumber" ng-model="formData.id_number"
+                                   placeholder="National ID NO.">
+                        </label>
+                    </div>
+
+
+                      <label class="item item-input">
+                          <button id="frontIdBtn" class="button button-positive button-small button-outline"
+                                  ng-click="photoFrontID()" type="button">Attach ID front picture</button>
+                          <span >
+                              <img id="frontId" width="75px" height="50px"alt=""/>
+                          </span>
+                      </label>
+                      <label class="item item-input">
+                          <button id="backIdBtn" class="button button-positive button-small button-outline"
+                                  ng-click="photoBackID()" type="button">Attach ID back picture</button>
+                          <span>
+                              <img id="backId" width="75px" height="50px" alt=""/>
+                          </span>
+                      </label>
+                      <label class="item item-input">
+                          <button id="profileBtn" class="button button-positive button-small button-outline"
+                                  ng-click="photoProfile()" type="button">Attach Profile Picture &nbsp;</button>
+                          <span>
+                              <img id="profile" width="75px" height="50px" alt=""/>
+                          </span>
+                      </label>
+                   <!-- <button ng-show="idfront==null" class="button button-positive button-small" ng-click="photoBackID()" type="button">Attach ID back</button>
+                    <button ng-show="idfront==null" class="button button-positive button-small" ng-click="photoProfile()" type="button">Profile pic</button>
+-->
+
+
+                    <div class="item-input-inset item item-input item-stacked-label">
+                        <span class="input-label">Description:</span>
+                        <label class="item-input-wrapper">
+                            <textarea class="myTextArea" placeholder="Work description"
+                                      ng-model="formData.work_description" rows="3"></textarea>
+                        </label>
+
+                    </div>
+
+
+                        <!--Cash payment-->
+                        <ion-checkbox ng-model="formData.payNowd" ng-change="payChange('later')">Pay Later</ion-checkbox>
+                        <ion-checkbox ng-model="formData.payNow" ng-change="payChange('cash')">Pay now [M-pesa]</ion-checkbox>
+
+                    <label class="item-input-inset item item-input item-stacked-label" ng-show="formData.payNow==true">
+                        <span>Pay via M-pesa.</span>
+                        <label class="item-input-wrapper">
+                            Amount :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Kshs
+                            <input type="number" readonly="readonly" name="phoneNumber" ng-model="formData.pay"
+                                   placeholder="Enter amount paid">
+                        </label>
+                        <label class="item-input-wrapper">
+                            Account :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <input type="text" readonly="readonly" name="phoneNumber" ng-model="formData.account"
+                                   placeholder="Amount in Kshs.">
+                        </label>
+                        <label class="item-input-wrapper">
+                            Transaction Code:
+                            <input type="text" name="phoneNumber" ng-model="formData.transactionCode"
+                                   placeholder="Enter Transaction Code" style="text-align: center">
+                        </label>
+                        <!--<input type="number" name="username" placeholder="Enter amount paid" ng-model="formData.pay">-->
+                    </label>
+
+                    <label class="">
+                        <button type="submit" class="button button-assertive button-block button-outline">Register</button>
+                    </label>
+                </form>
+
+            </div>
+            <div class="card" ng-show="paymentDetails == 1">
+                <div class="title">Payment Details</div>
+                <ion-item>
+                    Name: {{data.service.name}}
+                </ion-item>
+                <ion-item>Payment Option: {{data.paid}}
+                </ion-item>
+                <ion-item>
+                    Registration Fee: {{data.note.amount}}
+                </ion-item>
+                <ion-item>Account: {{data.acc}}
+                    <button class="button button-block button-assertive" ng-click="back()">Back</button>
+                </ion-item></div>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>

@@ -1,0 +1,67 @@
+<ion-nav-view>
+    <style>
+        .icon{
+            font-size: xx-large;
+        }
+        .row{
+            padding-bottom: 20%;
+        }
+        .icon{
+            font-size: 55px;
+            color: #be1d2c;
+        }
+    </style>
+    <ion-view title="My title">
+        <div class="bar bar-header my_red">
+            <h1 class="title">Red Ant</h1>
+        </div>
+
+        <ion-content class="has-header text-center">
+            <div class="" style="">
+            <img src="img/log_redAnt.png" style=" padding-left: 15%; padding-top: 5%; padding-right: 10%;"> </img>
+        </div>
+
+            <div class=" text-center" style="padding-top: 35px;">
+                <div class="row">
+                    <div class="col-50" ng-click="register()">
+                        <i class="icon ion-ios-personadd-outline"></i><br/>
+                        <i>Add Job seeker</i>
+                    </div>
+                    <div class="col-50" ng-click="view_my_job_seekers()">
+                        <div style="margin-bottom: 10px">
+                            <span class="icon ion-ios-people-outline text-center" style="position: absolute"></span>
+                            <span class="badge badge-assertive" style="position: relative; top: 0;">{{count}}</span>
+                        </div>
+                        <br>
+                        <i>Service Providers</i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-50" ng-click="my_profile()">
+                        <i class="icon ion-ios-person-outline"></i><br/>
+                        <i>My Profile</i>
+                    </div>
+
+                    <div class="col-50" ng-click="paidJobSeekers()">
+                        <i class="icon ion-ios-briefcase-outline"></i><br/>
+                        <i>Job Openings</i>
+                    </div>
+
+                </div>
+                <div class="row">
+
+                    <div class="col-50" ng-click="myCommissions()">
+                        <i class="icon ion-ios-briefcase-outline"></i><br/>
+                        <i>Commission Earned</i>
+                    </div>
+                    <div class="col-50" ng-click="logout()">
+                    <i class="icon ion-log-out"></i><br/>
+                        <i>Logout</i>
+                    </div>
+                </div>
+
+            </div>
+        </ion-content>
+    </ion-view>
+</ion-nav-view>
